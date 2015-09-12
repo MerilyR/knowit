@@ -5,6 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 public class WeightedAverageCalculator {
+	
+	/**
+	 * method calculates a weighted average for values with equal weight
+	 * @param values
+	 * @return weighted average
+	 */
+	
 	public static int getWeightedAverage (List<Integer> values) 
 	{
 		Map<Integer, Integer> valueMap = new HashMap<Integer, Integer>();
@@ -37,6 +44,17 @@ public class WeightedAverageCalculator {
 //							" == total "+ values.size()+
 //							"--> "+(sumOfWeights==values.size()));
 //		
+		return getWeightedAverage(valueMap);
+		
+	}
+	
+	/**
+	 * calculates a weighted average for values with different weight
+	 * @param valueMap - map of values where key is value to be weighted and value is the weight
+	 * @return weighted average
+	 */
+	
+	public static int getWeightedAverage (Map<Integer, Integer> valueMap) {
 		int average = 0;
 		/**
 		 * Average
@@ -45,15 +63,16 @@ public class WeightedAverageCalculator {
 		 */
 		
 		int sum = 0;
+		int totalweight = 0;
 		for (int grade : valueMap.keySet()) {
 			int weight = valueMap.get(grade);
 			sum += grade*weight;
+			totalweight += weight;
 		}
 		
-		average = sum / values.size();
+		average = sum / totalweight;
 		
 		return average;
-		
 	}
 
 }
