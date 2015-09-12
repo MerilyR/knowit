@@ -1,0 +1,29 @@
+Student Information System for the imaginary University of Knowit
+
+* Program calculates the weighted average grade of students
+- Class Student(variable int[] grades)
+- weighted average grade calculator
+
+***Grades weight equals how many times it occurs in grade list
+
+*** Data points may contribute equally to the final average
+***add weight*grade divided with number of grades (equal weight)
+ 
+* The student list needs to be sorted by their weighted average grade
+
+** If the weighted average grade is equal on two or more students then they need to be sorted by their names
+- CustomComparator
+
+* The grades need to be read in from an XML file format
+- StudentReader
+''' weight set in xml
+
+* Graphical user interface
+- List of students and their weighted average grades
+
+
+*******************************************************************************
+
+
+
+ 
