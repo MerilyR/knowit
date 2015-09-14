@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<name>Peeter</name>
+		<grades>
+			<grade>5</grade>
+			<grade>3</grade>
+			<grade>4</grade>
+			<grade>4</grade>
+			<grade>5</grade>
+			<grade>3</grade>
+		</grades>
+	</student>
+	<student>
+		<name>Mari</name>
+		<grades>
+			<grade>3</grade>
+			<grade>3</grade>
+			<grade>4</grade>
+			<grade>4</grade>
+			<grade>4</grade>
+			<grade>3</grade>
+		</grades>
+	</student>
+	<student>
+		<name>John</name>
+		<grades>
+			<grade>5</grade>
+			<grade>5</grade>
+			<grade>5</grade>
+			<grade>4</grade>
+			<grade>5</grade>
+			<grade>3</grade>
+		</grades>
+	</student>
+</students>

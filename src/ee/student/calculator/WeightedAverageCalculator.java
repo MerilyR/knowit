@@ -12,7 +12,7 @@ public class WeightedAverageCalculator {
 	 * @return weighted average
 	 */
 	
-	public static int getWeightedAverage (List<Integer> values) 
+	public static double getWeightedAverage (List<Integer> values) 
 	{
 		Map<Integer, Integer> valueMap = new HashMap<Integer, Integer>();
 		
@@ -54,16 +54,16 @@ public class WeightedAverageCalculator {
 	 * @return weighted average
 	 */
 	
-	public static int getWeightedAverage (Map<Integer, Integer> valueMap) {
-		int average = 0;
+	public static double getWeightedAverage (Map<Integer, Integer> valueMap) {
+		double average = 0;
 		/**
 		 * Average
 		 * sum of ( each grade * weight ) 
 		 * divided by total weight 
 		 */
 		
-		int sum = 0;
-		int totalweight = 0;
+		double sum = 0;
+		double totalweight = 0;
 		for (int grade : valueMap.keySet()) {
 			int weight = valueMap.get(grade);
 			sum += grade*weight;

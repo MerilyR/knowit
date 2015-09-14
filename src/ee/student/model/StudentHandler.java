@@ -14,11 +14,11 @@ public class StudentHandler {
 		
 		@Override
 		public int compare(Student first, Student second) {
-			int firstAverage = WeightedAverageCalculator.getWeightedAverage(first.getGrades());
-			int secondAverage = WeightedAverageCalculator.getWeightedAverage(second.getGrades());
+			double firstAverage = WeightedAverageCalculator.getWeightedAverage(first.getGrades());
+			double secondAverage = WeightedAverageCalculator.getWeightedAverage(second.getGrades());
 			
 			if (firstAverage != secondAverage)
-				return Integer.compare (firstAverage, secondAverage);
+				return Double.compare (firstAverage, secondAverage);
 			
 			return first.getName().compareTo(second.getName());
 		}
@@ -33,6 +33,17 @@ public class StudentHandler {
 	{
 		students.add(newstudent);
 		Collections.sort(students, studentComparator);
+	}
+	
+	public void addAllStudents (List<Student> newStudents)
+	{
+		students.addAll(newStudents);
+		Collections.sort(students, studentComparator);
+	}
+	
+	public double getAverageFor (Student student)
+	{
+		return WeightedAverageCalculator.getWeightedAverage(student.getGrades());
 	}
 	
 }
