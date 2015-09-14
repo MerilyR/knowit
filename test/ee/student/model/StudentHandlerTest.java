@@ -1,9 +1,10 @@
 package ee.student.model;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.After;
 import org.junit.Before;
@@ -24,16 +25,32 @@ public class StudentHandlerTest {
 		StudentHandler handler = new StudentHandler();
 		
 		Student first = new Student();
+		
 		first.setName("First");
-		first.setGrades(Arrays.asList(5, 4, 3));
+//		first.setGrades(Arrays.asList(5, 4, 3)); //old test
+		Map<Integer, Integer> gradeMap = new HashMap<Integer, Integer>();
+		gradeMap.put(5, 1);
+		gradeMap.put(4, 1);
+		gradeMap.put(3, 1);
+		first.setGrades(gradeMap);
 		
 		Student second = new Student();
 		second.setName("Second");
-		second.setGrades(Arrays.asList(5, 4, 3));
+//		second.setGrades(Arrays.asList(5, 4, 3)); //old test
+		gradeMap = new HashMap<Integer, Integer>();
+		gradeMap.put(5, 1);
+		gradeMap.put(4, 1);
+		gradeMap.put(3, 1);
+		second.setGrades(gradeMap);
 		
 		Student third = new Student();
 		third.setName("First");
-		third.setGrades(Arrays.asList(4, 4, 3));
+//		third.setGrades(Arrays.asList(4, 4, 3)); //old test
+		gradeMap = new HashMap<Integer, Integer>();
+		gradeMap.put(4, 1);
+		gradeMap.put(4, 1);
+		gradeMap.put(3, 1);
+		third.setGrades(gradeMap);		
 		
 		List<Student> students = handler.getStudents();
 		

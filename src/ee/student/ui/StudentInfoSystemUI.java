@@ -43,7 +43,7 @@ public class StudentInfoSystemUI extends JFrame{
 	}
 
 	private static JTable fillTable() {
-		handler.addAllStudents(StudentParser.getStudentsFromFile("resources/students.xml"));
+		handler.addAllStudents(StudentParser.getStudentsFromFile("resources/students_weighted.xml"));
 		
 		String[][] data = new String [handler.getStudents().size()][2];
 		int i = 0;

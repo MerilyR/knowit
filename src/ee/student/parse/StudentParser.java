@@ -2,7 +2,9 @@ package ee.student.parse;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -22,6 +24,10 @@ public class StudentParser {
 		
 		try{
 			File fXmlFile = new File(file);
+			
+			System.out.println("----------------------------");
+			System.out.println("Log: start reading from "+file);
+			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
@@ -48,16 +54,17 @@ public class StudentParser {
 					
 					System.out.println("Name : " + name);
 					
-					List<Integer> grades = new ArrayList<Integer>();
+					Map<Integer, Integer> grades = new HashMap<Integer, Integer>();
 					NodeList gradeList = studentElement.getElementsByTagName("grade");
 					
 					for (int j = 0; j < gradeList.getLength(); j++ )
 					{
 						Element gradeElement = (Element) gradeList.item(j);
-						int grade = Integer.parseInt(gradeElement.getTextContent());
-						grades.add(grade);
+						int grade = Integer.parseInt(gradeElement.getElementsByTagName("value").item(0).getTextContent());
+						int weight = Integer.parseInt(gradeElement.getElementsByTagName("weight").item(0).getTextContent());
+						grades.put(grade, weight);
 						
-						System.out.println("Grade : " + grade);
+						System.out.println("Grade : " + grade +"("+weight+")");
 												
 					}
 					newStudent.setGrades(grades);	
@@ -67,6 +74,9 @@ public class StudentParser {
 	    } catch (Exception e) {
 	    	e.printStackTrace();
 	    }
+		
+		System.out.println("Log: end reading from "+file);
+		System.out.println("----------------------------");
 		
 		return students;
 	}

@@ -1,11 +1,11 @@
 package ee.student.model;
 
-import java.util.List;
+import java.util.Map;
 
 public class Student {
 	private String name;
 	
-	private List<Integer> grades;
+	private Map<Integer, Integer> grades;
 
 	public String getName() {
 		return name;
@@ -15,11 +15,11 @@ public class Student {
 		this.name = name;
 	}
 
-	public List<Integer> getGrades() {
+	public Map<Integer, Integer> getGrades() {
 		return grades;
 	}
 
-	public void setGrades(List<Integer> grades) {
+	public void setGrades(Map<Integer, Integer> grades) {
 		this.grades = grades;
 	}
 	
